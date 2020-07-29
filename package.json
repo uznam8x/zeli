@@ -1,0 +1,28 @@
+{
+  "name": "zeli",
+  "version": "0.0.1",
+  "description": "functional programming visualization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uznam8x/zeli.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "uznam8x",
+    "email": "uznam8x@gmail.com",
+    "url": "https://github.com/uznam8x"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uznam8x/zeli/issues"
+  },
+  "homepage": "https://github.com/uznam8x/zeli#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
