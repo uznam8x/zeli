@@ -5,4 +5,4 @@ var canvas = zeli(`
     --> svg
 `);
 
-console.log(canvas);
+console.log(JSON.stringify(canvas, null, 2));

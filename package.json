@@ -1,6 +1,6 @@
 {
   "name": "zeli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "functional programming visualization",
   "main": "index.js",
   "scripts": {

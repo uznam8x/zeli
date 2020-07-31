@@ -6,15 +6,36 @@ functional programming visualization
 
 ```js
 //input
-zeli(`[rect, rect] --> group --> svg`);
+zeli(`[rect = {width: '100'}, rect]
+    --> group
+    --> svg`);
 
 //output
-import rect from './rect';
-import group from './group';
-import svg from './svg';
-
-export default new Propmise((resolve) => resolve({}))
-  .then(pipe(task(rect, {}), task(rect, {})))
-  .then(task(group, {}))
-  .then(task(svg, {}));
+{
+  "node": {
+    "rect": {
+      "takes": []
+    },
+    "group": {
+      "takes": [
+        {
+          "rect": {
+            "width": "100"
+          }
+        },
+        {
+          "rect": {}
+        }
+      ]
+    },
+    "svg": {
+      "takes": [
+        {
+          "group": {}
+        }
+      ]
+    }
+  },
+  "endpoint": "svg"
+}
 ```
