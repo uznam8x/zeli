@@ -19,6 +19,6 @@ function rejectEmpty(arr = []) {
 
 function zeli(syntax = ``) {
   var rows = pipe(splitNewLine, stringTrim, rejectEmpty)(syntax);
-  parse(rows);
+  return parse(rows);
 }
 module.exports = zeli;

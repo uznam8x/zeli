@@ -4,3 +4,5 @@ var canvas = zeli(`
     --> group
     --> svg
 `);
+
+console.log(canvas);
