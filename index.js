@@ -1,5 +1,6 @@
 var pipe = require('./lib/pipe');
 var parse = require('./lib/parse');
+var output = require('./lib/output');
 
 function splitNewLine(text = '') {
   return text.split('---').map(function (value) {
@@ -17,8 +18,10 @@ function rejectEmpty(arr = []) {
   });
 }
 
-function zeli(syntax = ``) {
+function zeli(syntax = ``, option = { output: 'json' }) {
   var rows = pipe(splitNewLine, stringTrim, rejectEmpty)(syntax);
-  return parse(rows);
+  var data = parse(rows);
+
+  return output(data, option.output);
 }
 module.exports = zeli;
