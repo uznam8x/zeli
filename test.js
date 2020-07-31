@@ -1,6 +1,6 @@
 var zeli = require('./index.js');
 
-var canvas = zeli(
+var res = zeli(
   `
     [rect = {width: '100'}, rect]
     --> group
@@ -9,4 +9,4 @@ var canvas = zeli(
   { output: 'mermaid' }
 );
 
-console.log(canvas);
+console.log(res);
