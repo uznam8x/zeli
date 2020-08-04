@@ -7,11 +7,13 @@ function splitNewLine(text = '') {
     return value.replace(/\n/g, ' ');
   });
 }
+
 function stringTrim(arr = []) {
   return arr.map(function (value) {
     return value.trim();
   });
 }
+
 function rejectEmpty(arr = []) {
   return arr.filter(function (value) {
     return value.length;
@@ -20,8 +22,13 @@ function rejectEmpty(arr = []) {
 
 function zeli(syntax = ``, option = { output: 'json' }) {
   var rows = pipe(splitNewLine, stringTrim, rejectEmpty)(syntax);
-  var data = parse(rows);
 
-  return output(data, option.output);
+  try {
+    var res = output(parse(rows), option.output);
+    return res;
+  } catch (e) {
+    return null;
+  }
 }
+
 module.exports = zeli;
