@@ -1,11 +1,13 @@
-var pipe = require('./lib/pipe');
+var R = require('ramda');
 var parse = require('./lib/parse');
 var output = require('./lib/output');
 
 function splitNewLine(text = '') {
-  return text.split('---').map(function (value) {
-    return value.replace(/\n/g, ' ');
-  });
+  return R.pipe(
+    R.map(function (value) {
+      return value.replace(/\n/g, ' ');
+    })
+  )(text.split('---'));
 }
 
 function stringTrim(arr = []) {
@@ -20,8 +22,8 @@ function rejectEmpty(arr = []) {
   });
 }
 
-function zeli(syntax = ``, option = { output: 'json' }) {
-  var rows = pipe(splitNewLine, stringTrim, rejectEmpty)(syntax);
+function zeli(syntax = ``, option) {
+  var rows = R.pipe(splitNewLine, stringTrim, rejectEmpty)(syntax);
 
   try {
     var res = output(parse(rows), option.output);
