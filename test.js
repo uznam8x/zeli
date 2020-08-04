@@ -6,7 +6,7 @@ var res = zeli(
     --> group
     --> svg
 `,
-  { output: 'xml' }
+  { output: 'tree' }
 );
 
 console.log(res);
