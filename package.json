@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon ./test.js"
+    "watch": "nodemon -e jison,js ./compiler/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/uznam8x/zeli#readme",
   "dependencies": {
+    "jison": "^0.4.18",
     "nodemon": "^2.0.4",
     "ramda": "^0.27.0"
   }
